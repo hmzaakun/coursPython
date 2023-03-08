@@ -158,3 +158,75 @@ if '@' in chaine and '.' in chaine:
         print("La chaîne n'est pas un email valide : trop de caractères après le point")
 else:
     print("La chaîne n'est pas un email valide : pas de @")
+
+    
+# exo19
+truc = []  
+machin = [0.0] * 5  
+
+print(truc) 
+print(machin)  
+
+# exo20
+for i in range(4):
+    print(i)
+for i in range(4, 8):
+    print(i)
+for i in range(2, 9, 2):
+    print(i)
+
+#appartenance
+chose = [0, 1, 2, 3, 4, 5]
+print(3 in chose)  # affiche True
+print(6 in chose)  # affiche False
+
+
+# exo21
+x = int(input("Entrez un nombre : "))
+
+with open("data.txt", "w") as f:
+    for i in range(x):
+        chaine = input(f"Entrez la chaîne numéro {i+1} : ")
+        f.write(chaine + "\n")
+
+print("Les chaînes ont été enregistrées dans data.txt.")
+
+# exo22
+with open("data.txt", "r") as f:
+    for line in f:
+        line = line.strip()
+        if "@" in line and line.endswith(".com"):
+            print(f"{line} est un email.")
+        else:
+            print(f"{line} n'est pas un email.")
+
+# exo23
+def compterMots(chaine):
+    chaine = chaine.lower()
+    for c in [".", ",", ";", ":", "!", "?", "'"]:
+        chaine = chaine.replace(c, " ")
+
+    mots = chaine.split()
+    freq = {}
+    for mot in mots:
+        if mot in freq:
+            freq[mot] += 1
+        else:
+            freq[mot] = 1
+
+    return freq
+
+
+# exo24
+def cube(x):
+    return x * x * x
+
+def volumeSphere(r):
+    pi = 3.141592653589793
+    v = (4 / 3) * pi * cube(r)
+    return v
+
+
+# exo25
+def somme(a, b, c):
+    return a + b + c
